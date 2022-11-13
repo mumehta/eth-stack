@@ -6,15 +6,6 @@
 
 2. Clone the repo `https://github.com/mumehta/eth-stack` and navigate to project root
 
-3. Run sequentially
-
-`make build`  
-`make run`  
-`make play`  
-
-4. Stop and clean
-`make stop`
-
 ## How to use
 
 ### About
@@ -31,25 +22,25 @@ stop:  stop containers
 play:  run playbook
 ```
 
-Build Docker image
-	`make build`
+Build Docker image  
+	`make build`  
 
-Run Containers
-	`make run`
+Run Containers  
+	`make run` 
 
-Stop and clean containers
-	`make stop`
-
-Run ansible playbook
-	`make play`
+Stop and clean containers  
+	`make stop`  
+ 
+Run ansible playbook  
+	`make play`  
 
 ## Launch Galera cluster on containers
 
 1. Run below targets sequentially
 
-`make build`
-`make run`
-`make play`
+- `make build`  
+- `make run`  
+- `make play`  
 
 The `make run` updates the `inventory` on the run. `make apply` plays ansible playbook on launched containers to create cluster.
 
@@ -74,8 +65,8 @@ Query OK, 1 row affected (0.005 sec)
 
 Similarly, check on other containers and in mysql, you should see `test` database and `user` table
 
-2. Stop and clean
-`make stop`
-This will restore `inventory.txt` for using again with `make` commands
+2. Stop and clean  
+`make stop`  
+This will restore `inventory.txt` for using again with `make` commands.
 
 
