@@ -1,26 +1,28 @@
 # eth-stack  
 
+## Pre-requisites
 
-1. Build docker image  
-	`docker build -t ubu-wi-ssh -f Dockerfile-ubuntu-with-ssh .`
+1. Make use of host machine or preferrably launch a virtual machine with docker and ansible pre-installed
 
+2. Clone the repo `https://github.com/mumehta/eth-stack` and navigate to project root
 
-2. Run ubuntu container with ssh capability - 3 times - change name target1/target2/target3 in below command  
-	`docker run -d -P --rm --name target3 ubu-wi-ssh`
+3. Run sequentially
 
-	2.1 Get container ip address  
-		`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' target3`
+`make build`
+`make run`
+`make play`
 
-	2.2 populate ansible inventory - inventory.txt (in project repo)  
-
-	2.3 disable strict key checking - for ansible to do ssh in docker containers - ansible.cfg
-
-
-3. Install mariadb galera cluster  
-	`ansible-playbook playbook.yml -i inventory.txt`  
+4. Stop and clean
+`make stop`
 
 ## How to use
 
+### About
+
+The project makes use of ansible playbook https://github.com/mrlesmithjr/ansible-mariadb-galera-cluster and applies on docker-containers. The end state is galera-cluster running on containers.
+
+For easy manoeuvre the project makes use of `Make`.
+ 
 make  
 ```
 help:  all make options 
@@ -41,5 +43,39 @@ Stop and clean containers
 Run ansible playbook
 	`make play`
 
+## Launch Galera cluster on containers
+
+1. Run below targets sequentially
+
+`make build`
+`make run`
+`make play`
+
+The `make run` updates the `inventory` on the run. `make apply` plays ansible playbook on launched containers to create cluster.
+
+2. Verify if cluster is up and running
+
+`docker exec -it target1 bash`
+
+```
+root@target1:/# mysql -uroot -p
+
+MariaDB [(none)]> create database test;
+Query OK, 1 row affected (0.000 sec)
+
+MariaDB [(none)]> use test
+Database changed
+MariaDB [test]> create table user (id int auto_increment primary key, username varchar(20), when datetime) ;
+Query OK, 0 rows affected (0.056 sec)
+
+MariaDB [test]> insert into user (username,when) values (@@hostname,now());
+Query OK, 1 row affected (0.005 sec)
+```
+
+Similarly, check on other containers and in mysql, you should see `test` database and `user` table
+
+2. Stop and clean
+`make stop`
+This will restore `inventory.txt` for using again with `make` commands
 
 
