@@ -137,6 +137,9 @@
     not galera_cluster_configured.stat.exists and
     inventory_hostname == galera_mysql_first_node
 
+- name: setup_cluster | update galera_new_cluster and use /etc/init.d/ instead of systemctl
+  shell: sed -i -e 's/systemctl set-environment/export/g' -e 's/systemctl restart ${1:-mariadb}/\/etc\/init.d\/mariadb restart/g' /usr/bin/galera_new_cluster
+
 - name: setup_cluster | cluster bootstrap - bootstrapping first node
   command: "/usr/bin/galera_new_cluster"
   become: true

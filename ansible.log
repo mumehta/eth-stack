@@ -1,0 +1,440 @@
+2022-11-13 13:35:30,556 p=215097 u=munish n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2022-11-13 13:35:30,692 p=215097 u=munish n=ansible | PLAY [build docker image] *****************************************************************************************************************************************************************************************
+2022-11-13 13:35:30,699 p=215097 u=munish n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2022-11-13 13:35:31,700 p=215097 u=munish n=ansible | ok: [localhost]
+2022-11-13 13:35:31,717 p=215097 u=munish n=ansible | TASK [Build docker image] *****************************************************************************************************************************************************************************************
+2022-11-13 13:35:32,183 p=215097 u=munish n=ansible | ok: [localhost]
+2022-11-13 13:35:32,201 p=215097 u=munish n=ansible | PLAY [Mariabd Galera Cluster] *************************************************************************************************************************************************************************************
+2022-11-13 13:35:32,204 p=215097 u=munish n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2022-11-13 13:35:33,333 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:35:33,365 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:35:33,366 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:35:33,414 p=215097 u=munish n=ansible | TASK [Include ansible-mariadb-galera-cluster] *********************************************************************************************************************************************************************
+2022-11-13 13:35:33,567 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : gather os specific variables] **********************************************************************************************************************************************
+2022-11-13 13:35:33,628 p=215097 u=munish n=ansible | ok: [target1] => (item=/home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/vars/ubuntu-20.yml)
+2022-11-13 13:35:33,631 p=215097 u=munish n=ansible | ok: [target2] => (item=/home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/vars/ubuntu-20.yml)
+2022-11-13 13:35:33,633 p=215097 u=munish n=ansible | ok: [target3] => (item=/home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/vars/ubuntu-20.yml)
+2022-11-13 13:35:33,643 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : ensure NIC specified in 'galera_cluster_bind_interface' exists] ************************************************************************************************************
+2022-11-13 13:35:33,710 p=215097 u=munish n=ansible | ok: [target1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,714 p=215097 u=munish n=ansible | ok: [target2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,723 p=215097 u=munish n=ansible | ok: [target3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,732 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : When mariadb_sst_username is unix_socket, the mariadb_sst_password should not be set] **************************************************************************************
+2022-11-13 13:35:33,766 p=215097 u=munish n=ansible | ok: [target1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,775 p=215097 u=munish n=ansible | ok: [target2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,789 p=215097 u=munish n=ansible | ok: [target3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2022-11-13 13:35:33,796 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : When mariadb_sst_username is mysql_native_password, mariadb_sst_password should also be set] *******************************************************************************
+2022-11-13 13:35:33,836 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:35:33,837 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:35:33,852 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:35:33,861 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | update package list] **********************************************************************************************************************************************
+2022-11-13 13:35:47,235 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:35:47,382 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:35:47,881 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:35:47,888 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | installing pre-reqs] **********************************************************************************************************************************************
+2022-11-13 13:36:34,439 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:36:35,426 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:36:36,140 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:36:36,146 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | adding MariaDB Repo Keys] *****************************************************************************************************************************************
+2022-11-13 13:36:38,835 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:36:38,835 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:36:38,859 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:36:38,873 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | adding MariaDB Repo Keys] *****************************************************************************************************************************************
+2022-11-13 13:36:38,925 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:36:38,959 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:36:38,970 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:36:38,982 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | pinning MariaDB Repo] *********************************************************************************************************************************************
+2022-11-13 13:36:39,850 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:36:39,892 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:36:39,953 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:36:39,960 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | adding mariadb repo] **********************************************************************************************************************************************
+2022-11-13 13:36:44,131 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:36:44,143 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:36:44,159 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:36:44,171 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | precreate /etc/mysql/conf.d in case we need to add mariadb_config_overrides file] *********************************************************************************
+2022-11-13 13:36:44,210 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:36:44,227 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:36:44,233 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:36:44,243 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | add an overrides file] ********************************************************************************************************************************************
+2022-11-13 13:36:44,286 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:36:44,301 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:36:44,313 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:36:44,321 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | configuring root my.cnf] ******************************************************************************************************************************************
+2022-11-13 13:36:44,979 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:36:44,994 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:36:45,073 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:36:45,081 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | mysql root password setting] **************************************************************************************************************************************
+2022-11-13 13:36:45,719 p=215097 u=munish n=ansible | ok: [target2] => (item=None)
+2022-11-13 13:36:45,744 p=215097 u=munish n=ansible | ok: [target1] => (item=None)
+2022-11-13 13:36:45,775 p=215097 u=munish n=ansible | ok: [target3] => (item=None)
+2022-11-13 13:36:46,176 p=215097 u=munish n=ansible | ok: [target2] => (item=None)
+2022-11-13 13:36:46,185 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:36:46,259 p=215097 u=munish n=ansible | ok: [target1] => (item=None)
+2022-11-13 13:36:46,259 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:36:46,318 p=215097 u=munish n=ansible | ok: [target3] => (item=None)
+2022-11-13 13:36:46,319 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:36:46,327 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : debian | installing mariadb-galera packages] *******************************************************************************************************************************
+2022-11-13 13:37:50,368 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:37:52,055 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:37:52,440 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:37:52,448 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | adding mariadb repo] **********************************************************************************************************************************************
+2022-11-13 13:37:52,468 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,485 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,495 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,503 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | disable appstream mysql/mariadb modules] **************************************************************************************************************************
+2022-11-13 13:37:52,524 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,547 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,557 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,568 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | clean dnf metadata (centos8 & fedora)] ****************************************************************************************************************************
+2022-11-13 13:37:52,611 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,614 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,626 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,636 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | installing pre-reqs] **********************************************************************************************************************************************
+2022-11-13 13:37:52,680 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,690 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,696 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,705 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | precreate /etc/my.cnf.d in case we need to add mariadb_config_overrides file] *************************************************************************************
+2022-11-13 13:37:52,748 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,753 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,766 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,774 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | add an overrides file] ********************************************************************************************************************************************
+2022-11-13 13:37:52,801 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,817 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,836 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,846 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | installing mariadb mysql] *****************************************************************************************************************************************
+2022-11-13 13:37:52,893 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,902 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,908 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,922 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | remove migrated-from-my.cnf-settings.conf that is causing MariaDB to not start] ***********************************************************************************
+2022-11-13 13:37:52,949 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:52,969 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:52,979 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:52,989 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : redhat | ensuring mariadb mysql is enabled on boot] ************************************************************************************************************************
+2022-11-13 13:37:53,012 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,033 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,047 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,060 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : max-open-files | Create folder] ********************************************************************************************************************************************
+2022-11-13 13:37:53,093 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,120 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,132 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,144 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : max-open-files | Add the overriding file] **********************************************************************************************************************************
+2022-11-13 13:37:53,186 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,190 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,201 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,215 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : oom_score_adjust | create folder] ******************************************************************************************************************************************
+2022-11-13 13:37:53,267 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,268 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,282 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,291 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : oom_score_adjust | add the overriding file] ********************************************************************************************************************************
+2022-11-13 13:37:53,333 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,343 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,352 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,368 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : timeout-start-sec | Create folder] *****************************************************************************************************************************************
+2022-11-13 13:37:53,411 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,414 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,427 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,436 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : timeout-start-sec | Add the overriding file] *******************************************************************************************************************************
+2022-11-13 13:37:53,477 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,489 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,495 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,508 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : system_perfromance_tuning | configure swappiness] **************************************************************************************************************************
+2022-11-13 13:37:53,550 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:53,552 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,568 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:53,581 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : flush handlers before continuing] ******************************************************************************************************************************************
+2022-11-13 13:37:53,592 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : ensure mariadb is started on first node] ***********************************************************************************************************************************
+2022-11-13 13:37:53,653 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:53,670 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:55,374 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:37:55,386 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Check if mysql exists in the system] ***************************************************************************************************************************************
+2022-11-13 13:37:55,737 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:37:55,749 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Fail if the above user does not exist] *************************************************************************************************************************************
+2022-11-13 13:37:55,765 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:55,779 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Create definition for mariadb_sst_user via unix_socket] ********************************************************************************************************************
+2022-11-13 13:37:55,806 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:37:55,820 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Create definition for mariadb_sst_user via mysql_native_password] **********************************************************************************************************
+2022-11-13 13:37:55,838 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:55,860 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : mysql_users | create MySQL users] ******************************************************************************************************************************************
+2022-11-13 13:37:55,882 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:55,891 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | mark galera cluster node unconfigured] *********************************************************************************************************************
+2022-11-13 13:37:55,917 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:55,945 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:55,953 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:55,961 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | checking if galera cluster already configured] *************************************************************************************************************
+2022-11-13 13:37:56,328 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:37:56,328 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:37:56,363 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:37:56,370 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | create TLS certificates directory] *************************************************************************************************************************
+2022-11-13 13:37:56,411 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:56,412 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:56,432 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:56,445 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | copy TLS CA cert, server cert & private key] ***************************************************************************************************************
+2022-11-13 13:37:56,495 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:56,496 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:56,505 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:56,514 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : WSREP ist.recv_] ***********************************************************************************************************************************************************
+2022-11-13 13:37:56,580 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:37:56,581 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:37:56,589 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:37:56,596 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : WSREP TLS encryption settings] *********************************************************************************************************************************************
+2022-11-13 13:37:56,614 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:56,630 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:56,639 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:56,646 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Add galera_use_gmcast_segment if present] **********************************************************************************************************************************
+2022-11-13 13:37:56,678 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:56,680 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:56,693 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:56,704 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : Show all galera_extra_wsrep_provider_options] ******************************************************************************************************************************
+2022-11-13 13:37:56,732 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:56,749 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:37:56,763 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:56,771 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | configuring settings for mariadb and galera] ***************************************************************************************************************
+2022-11-13 13:37:57,418 p=215097 u=munish n=ansible | changed: [target1] => (item=etc/mysql/debian.cnf)
+2022-11-13 13:37:57,468 p=215097 u=munish n=ansible | changed: [target2] => (item=etc/mysql/debian.cnf)
+2022-11-13 13:37:57,623 p=215097 u=munish n=ansible | changed: [target3] => (item=etc/mysql/debian.cnf)
+2022-11-13 13:37:58,116 p=215097 u=munish n=ansible | changed: [target1] => (item=etc/mysql/my.cnf)
+2022-11-13 13:37:58,138 p=215097 u=munish n=ansible | changed: [target2] => (item=etc/mysql/my.cnf)
+2022-11-13 13:37:58,329 p=224944 u=munish n=ansible | [DEPRECATION WARNING]: Use 'ansible.utils.ipwrap' module instead. This feature will be removed from ansible.netcommon in a release after 2024-01-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-11-13 13:37:58,380 p=215097 u=munish n=ansible | changed: [target3] => (item=etc/mysql/my.cnf)
+2022-11-13 13:37:58,420 p=224945 u=munish n=ansible | [DEPRECATION WARNING]: Use 'ansible.utils.ipwrap' module instead. This feature will be removed from ansible.netcommon in a release after 2024-01-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-11-13 13:37:58,584 p=224948 u=munish n=ansible | [DEPRECATION WARNING]: Use 'ansible.utils.ipwrap' module instead. This feature will be removed from ansible.netcommon in a release after 2024-01-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-11-13 13:37:59,052 p=215097 u=munish n=ansible | changed: [target1] => (item=etc/mysql/conf.d/galera.cnf)
+2022-11-13 13:37:59,128 p=215097 u=munish n=ansible | changed: [target2] => (item=etc/mysql/conf.d/galera.cnf)
+2022-11-13 13:37:59,232 p=215097 u=munish n=ansible | changed: [target3] => (item=etc/mysql/conf.d/galera.cnf)
+2022-11-13 13:37:59,239 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster rolling restart - apply config changes (first node)] ***********************************************************************************************
+2022-11-13 13:37:59,258 p=215097 u=munish n=ansible | skipping: [target1] => (item=target1) 
+2022-11-13 13:37:59,271 p=215097 u=munish n=ansible | skipping: [target2] => (item=target1) 
+2022-11-13 13:37:59,288 p=215097 u=munish n=ansible | skipping: [target3] => (item=target1) 
+2022-11-13 13:37:59,296 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster rolling restart - apply config changes (other nodes)] **********************************************************************************************
+2022-11-13 13:37:59,321 p=215097 u=munish n=ansible | skipping: [target1] => (item=target2) 
+2022-11-13 13:37:59,322 p=215097 u=munish n=ansible | skipping: [target1] => (item=target3) 
+2022-11-13 13:37:59,351 p=215097 u=munish n=ansible | skipping: [target2] => (item=target2) 
+2022-11-13 13:37:59,352 p=215097 u=munish n=ansible | skipping: [target2] => (item=target3) 
+2022-11-13 13:37:59,372 p=215097 u=munish n=ansible | skipping: [target3] => (item=target2) 
+2022-11-13 13:37:59,373 p=215097 u=munish n=ansible | skipping: [target3] => (item=target3) 
+2022-11-13 13:37:59,391 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - stopping mysql to (re)configure cluster (other nodes)] *********************************************************************************
+2022-11-13 13:37:59,560 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target2)
+2022-11-13 13:37:59,563 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target3)
+2022-11-13 13:37:59,582 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service stopped] *********************************************************************************************************************
+2022-11-13 13:37:59,603 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:59,634 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:37:59,901 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:37:59,906 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:37:59,922 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:37:59,946 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:00,224 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:38:00,229 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:00,245 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:00,261 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:00,267 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:00,280 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:00,315 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:00,337 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:00,348 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:00,358 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service stopped] *********************************************************************************************************************
+2022-11-13 13:38:00,382 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:00,403 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:00,699 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:38:00,706 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:38:00,735 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:00,741 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:01,029 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:38:01,035 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:01,051 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:01,063 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:01,078 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:01,096 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:01,128 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:01,158 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:01,177 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:01,187 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - stopping mysql to (re)configure cluster (first node)] **********************************************************************************
+2022-11-13 13:38:01,279 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target1)
+2022-11-13 13:38:01,308 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service stopped] *********************************************************************************************************************
+2022-11-13 13:38:01,353 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:01,353 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:02,699 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:38:02,706 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:38:02,752 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:02,767 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:03,015 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:38:03,024 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:03,041 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:03,055 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:03,067 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:03,087 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:03,121 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:03,148 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:03,166 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:03,174 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | custer bootstrap - killing lingering mysql processes to ensure mysql is stopped] ***************************************************************************
+2022-11-13 13:38:03,643 p=215097 u=munish n=ansible | fatal: [target2]: FAILED! => {"changed": true, "cmd": ["pkill", "mariadb"], "delta": "0:00:00.003616", "end": "2022-11-13 02:38:03.556684", "msg": "non-zero return code", "rc": 1, "start": "2022-11-13 02:38:03.553068", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2022-11-13 13:38:03,643 p=215097 u=munish n=ansible | ...ignoring
+2022-11-13 13:38:03,663 p=215097 u=munish n=ansible | fatal: [target3]: FAILED! => {"changed": true, "cmd": ["pkill", "mariadb"], "delta": "0:00:00.005089", "end": "2022-11-13 02:38:03.593374", "msg": "non-zero return code", "rc": 1, "start": "2022-11-13 02:38:03.588285", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2022-11-13 13:38:03,663 p=215097 u=munish n=ansible | ...ignoring
+2022-11-13 13:38:03,726 p=215097 u=munish n=ansible | fatal: [target1]: FAILED! => {"changed": true, "cmd": ["pkill", "mariadb"], "delta": "0:00:00.004176", "end": "2022-11-13 02:38:03.694684", "msg": "non-zero return code", "rc": 1, "start": "2022-11-13 02:38:03.690508", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2022-11-13 13:38:03,726 p=215097 u=munish n=ansible | ...ignoring
+2022-11-13 13:38:03,734 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - configuring temp galera config for first node] *****************************************************************************************
+2022-11-13 13:38:03,774 p=215097 u=munish n=ansible | skipping: [target2] => (item=etc/mysql/conf.d/galera.cnf) 
+2022-11-13 13:38:03,794 p=215097 u=munish n=ansible | skipping: [target3] => (item=etc/mysql/conf.d/galera.cnf) 
+2022-11-13 13:38:03,905 p=226085 u=munish n=ansible | [DEPRECATION WARNING]: Use 'ansible.utils.ipwrap' module instead. This feature will be removed from ansible.netcommon in a release after 2024-01-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-11-13 13:38:04,309 p=215097 u=munish n=ansible | changed: [target1] => (item=etc/mysql/conf.d/galera.cnf)
+2022-11-13 13:38:04,318 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | update galera_new_cluster and use /etc/init.d/ instead of systemctl] ***************************************************************************************
+2022-11-13 13:38:04,639 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:38:04,693 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:38:04,761 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:38:04,774 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - bootstrapping first node] **************************************************************************************************************
+2022-11-13 13:38:04,814 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:04,824 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:07,421 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:38:07,427 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - ensure first node is fully started before joining other nodes] *************************************************************************
+2022-11-13 13:38:07,498 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target1)
+2022-11-13 13:38:07,533 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service started] *********************************************************************************************************************
+2022-11-13 13:38:07,565 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:07,581 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:07,850 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:38:07,857 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:38:07,875 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:07,894 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:07,897 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:07,908 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:07,960 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:07,967 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:08,234 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:38:08,246 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:08,299 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:08,326 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:23,650 p=215097 u=munish n=ansible | ok: [target1 -> localhost]
+2022-11-13 13:38:23,668 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - joining galera cluster] ****************************************************************************************************************
+2022-11-13 13:38:23,762 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target2)
+2022-11-13 13:38:23,765 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target3)
+2022-11-13 13:38:23,801 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service started] *********************************************************************************************************************
+2022-11-13 13:38:23,817 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:23,911 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:28,875 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:38:28,882 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:38:28,898 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:28,918 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:28,920 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:28,927 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:28,966 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:28,994 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:29,299 p=215097 u=munish n=ansible | ok: [target2]
+2022-11-13 13:38:29,325 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:29,361 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:29,418 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:44,606 p=215097 u=munish n=ansible | ok: [target2 -> localhost]
+2022-11-13 13:38:44,615 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service started] *********************************************************************************************************************
+2022-11-13 13:38:44,655 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:44,656 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:51,947 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:38:51,954 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:38:51,974 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:51,990 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:52,002 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:38:52,010 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:38:52,042 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:52,063 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:38:52,366 p=215097 u=munish n=ansible | ok: [target3]
+2022-11-13 13:38:52,379 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:38:52,410 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:38:52,431 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:07,625 p=215097 u=munish n=ansible | ok: [target3 -> localhost]
+2022-11-13 13:39:07,634 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - configuring final galera config for first node] ****************************************************************************************
+2022-11-13 13:39:07,693 p=215097 u=munish n=ansible | skipping: [target2] => (item=etc/mysql/debian.cnf) 
+2022-11-13 13:39:07,694 p=215097 u=munish n=ansible | skipping: [target2] => (item=etc/mysql/my.cnf) 
+2022-11-13 13:39:07,695 p=215097 u=munish n=ansible | skipping: [target2] => (item=etc/mysql/conf.d/galera.cnf) 
+2022-11-13 13:39:07,713 p=215097 u=munish n=ansible | skipping: [target3] => (item=etc/mysql/debian.cnf) 
+2022-11-13 13:39:07,722 p=215097 u=munish n=ansible | skipping: [target3] => (item=etc/mysql/my.cnf) 
+2022-11-13 13:39:07,723 p=215097 u=munish n=ansible | skipping: [target3] => (item=etc/mysql/conf.d/galera.cnf) 
+2022-11-13 13:39:08,212 p=215097 u=munish n=ansible | ok: [target1] => (item=etc/mysql/debian.cnf)
+2022-11-13 13:39:08,604 p=215097 u=munish n=ansible | ok: [target1] => (item=etc/mysql/my.cnf)
+2022-11-13 13:39:08,689 p=228652 u=munish n=ansible | [DEPRECATION WARNING]: Use 'ansible.utils.ipwrap' module instead. This feature will be removed from ansible.netcommon in a release after 2024-01-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-11-13 13:39:09,098 p=215097 u=munish n=ansible | changed: [target1] => (item=etc/mysql/conf.d/galera.cnf)
+2022-11-13 13:39:09,104 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - restarting first node with final galera config] ****************************************************************************************
+2022-11-13 13:39:09,175 p=215097 u=munish n=ansible | included: /home/munish/Documents/gitrepo/eth-stack/roles/ansible-mariadb-galera-cluster/tasks/manage_node_state.yml for target1, target2, target3 => (item=target1)
+2022-11-13 13:39:09,263 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | make node systemd service restarted] *******************************************************************************************************************
+2022-11-13 13:39:09,304 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:09,323 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:16,240 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:39:16,247 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully stopped before continuing] ********************************************************************************************************
+2022-11-13 13:39:16,265 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:16,280 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:16,291 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:16,298 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | ensure node is fully started before continuing] ********************************************************************************************************
+2022-11-13 13:39:16,347 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:16,362 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:16,615 p=215097 u=munish n=ansible | ok: [target1]
+2022-11-13 13:39:16,630 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : manage_node_state | sleep for extra 15 seconds to wait for node state stabilization] ***************************************************************************************
+2022-11-13 13:39:16,704 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:16,718 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:31,866 p=215097 u=munish n=ansible | ok: [target1 -> localhost]
+2022-11-13 13:39:31,875 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : setup_cluster | cluster bootstrap - marking node as configured for galera cluster] *****************************************************************************************
+2022-11-13 13:39:32,222 p=215097 u=munish n=ansible | changed: [target3]
+2022-11-13 13:39:32,223 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:39:32,349 p=215097 u=munish n=ansible | changed: [target2]
+2022-11-13 13:39:32,358 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : configure_root_access | configuring root my.cnf] ***************************************************************************************************************************
+2022-11-13 13:39:32,391 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:32,394 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:32,403 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:32,414 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : configure_root_access | updating root passwords] ***************************************************************************************************************************
+2022-11-13 13:39:32,955 p=215097 u=munish n=ansible | changed: [target1] => (item=None)
+2022-11-13 13:39:33,320 p=215097 u=munish n=ansible | changed: [target1] => (item=None)
+2022-11-13 13:39:33,649 p=215097 u=munish n=ansible | changed: [target1] => (item=None)
+2022-11-13 13:39:34,015 p=215097 u=munish n=ansible | changed: [target1] => (item=None)
+2022-11-13 13:39:34,016 p=215097 u=munish n=ansible | changed: [target1]
+2022-11-13 13:39:34,025 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : configure_root_access | updating root passwords (allow from anywhere)] *****************************************************************************************************
+2022-11-13 13:39:34,054 p=215097 u=munish n=ansible | skipping: [target1] => (item=None) 
+2022-11-13 13:39:34,057 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,066 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : mysql_databases | create the databases] ************************************************************************************************************************************
+2022-11-13 13:39:34,130 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : mysql_databases | copy database init scripts] ******************************************************************************************************************************
+2022-11-13 13:39:34,196 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : mysql_databases | initialise databases] ************************************************************************************************************************************
+2022-11-13 13:39:34,252 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : mysql_databases | delete init scripts from the server] *********************************************************************************************************************
+2022-11-13 13:39:34,314 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : galera_monitoring | configuring monitor script for galera] *****************************************************************************************************************
+2022-11-13 13:39:34,335 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,351 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:34,364 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:34,373 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : galera_monitoring | restarting mysql on first node] ************************************************************************************************************************
+2022-11-13 13:39:34,409 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,411 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:34,433 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:34,455 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : galera_monitoring | waiting for mysql to start on first node] **************************************************************************************************************
+2022-11-13 13:39:34,481 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,491 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : galera_monitoring | restarting mysql on additional servers] ****************************************************************************************************************
+2022-11-13 13:39:34,521 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,540 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:34,551 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:34,563 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : galera_monitoring | waiting for mysql to start on other nodes] *************************************************************************************************************
+2022-11-13 13:39:34,596 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,612 p=215097 u=munish n=ansible | skipping: [target2]
+2022-11-13 13:39:34,623 p=215097 u=munish n=ansible | skipping: [target3]
+2022-11-13 13:39:34,633 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : cacti_monitoring | adding cacti db user for monitoring] ********************************************************************************************************************
+2022-11-13 13:39:34,653 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,664 p=215097 u=munish n=ansible | TASK [ansible-mariadb-galera-cluster : cacti_monitoring | adding cacti db user for monitoring] ********************************************************************************************************************
+2022-11-13 13:39:34,690 p=215097 u=munish n=ansible | skipping: [target1]
+2022-11-13 13:39:34,730 p=215097 u=munish n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2022-11-13 13:39:34,731 p=215097 u=munish n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-11-13 13:39:34,731 p=215097 u=munish n=ansible | target1                    : ok=40   changed=17   unreachable=0    failed=0    skipped=64   rescued=0    ignored=1   
+2022-11-13 13:39:34,731 p=215097 u=munish n=ansible | target2                    : ok=30   changed=11   unreachable=0    failed=0    skipped=64   rescued=0    ignored=1   
+2022-11-13 13:39:34,731 p=215097 u=munish n=ansible | target3                    : ok=30   changed=11   unreachable=0    failed=0    skipped=64   rescued=0    ignored=1   

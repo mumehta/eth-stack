@@ -1,6 +1,18 @@
 ---
+- name: build docker image
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Build docker image
+      docker_image:
+        name: ubuntu-ssh
+        source: build
+        build:
+          path: ./
+        state: present
+
 - name: Mariabd Galera Cluster
-  hosts: all
+  hosts: galera-cluster-nodes
   tasks:
     - name: Include ansible-mariadb-galera-cluster
       include_role:
