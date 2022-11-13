@@ -12,7 +12,7 @@
     state: "stopped"
   become: true
   register: "_mariadb_galera_cluster_node"
-  until: _mariadb_galera_cluster_node.status.ActiveState == "inactive"
+  until: _mariadb_galera_cluster_node.state == "stopped"
   retries: 60
   delay: 5
   when:
@@ -25,7 +25,7 @@
     state: "started"
   become: true
   register: "_mariadb_galera_cluster_node"
-  until: _mariadb_galera_cluster_node.status.ActiveState == "active"
+  until: _mariadb_galera_cluster_node.state == "started"
   retries: 60
   delay: 5
   when:

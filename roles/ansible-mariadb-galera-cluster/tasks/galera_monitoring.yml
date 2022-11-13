@@ -24,7 +24,7 @@
     state: "started"
   become: true
   register: "_mariadb_galera_cluster_node"
-  until: _mariadb_galera_cluster_node.status.ActiveState == "active"
+  until: _mariadb_galera_cluster_node.state == "started"
   retries: 60
   delay: 5
   delegate_to: "{{ galera_mysql_first_node }}"
@@ -49,7 +49,7 @@
     state: "started"
   become: true
   register: "_mariadb_galera_cluster_node"
-  until: _mariadb_galera_cluster_node.status.ActiveState == "active"
+  until: _mariadb_galera_cluster_node.state == "started"
   retries: 60
   delay: 5
   when: >
