@@ -8,9 +8,9 @@
 
 3. Run sequentially
 
-`make build`
-`make run`
-`make play`
+`make build`  
+`make run`  
+`make play`  
 
 4. Stop and clean
 `make stop`
