@@ -17,3 +17,6 @@
     - name: Include ansible-mariadb-galera-cluster
       include_role:
         name: ansible-mariadb-galera-cluster
+      vars:
+        mariadb_debian_repo: "deb [arch=amd64,i386,ppc64el] https://mariadb.mirror.digitalpacific.com.au/repo/{{ mariadb_version }}/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} main"
+        mariadb_debian_repo_pin: "mariadb.mirror.digitalpacific.com.au"
