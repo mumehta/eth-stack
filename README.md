@@ -38,6 +38,7 @@ Run ansible playbook
 
 1. Run below targets sequentially
 
+- `make stop`
 - `make build`  
 - `make run`  
 - `make play`  
@@ -68,5 +69,57 @@ Similarly, check on other containers and in mysql, you should see `test` databas
 2. Stop and clean  
 `make stop`  
 This will restore `inventory.txt` for using again with `make` commands.
+
+
+## Setup mysql root user after cluster launch
+
+1. From docker container, connect to `mysql`  
+
+	`docker exec -it target1 bash`  
+	`mysql`  
+	```
+	MariaDB [(none)]> -- CREATE ROOT USER FOR WILDCARD HOST;
+	MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+	Query OK, 0 rows affected (0.057 sec)
+
+	MariaDB [(none)]> FLUSH PRIVILEGES;
+	Query OK, 0 rows affected (0.048 sec)
+
+	MariaDB [(none)]> exit
+	Bye
+	root@target1:/# exit
+	exit
+	```   
+2. 	Now you should be able to connect to galara from host machine  - replace `172.17.0.4` belo with any docker ip (can see inventory.txt file)  
+
+	```
+	mysql -uroot -p -h172.17.0.4
+	Enter password: 
+	Welcome to the MySQL monitor.  Commands end with ; or \g.
+	Your MySQL connection id is 47
+	Server version: 5.5.5-10.6.11-MariaDB-1:10.6.11+maria~ubu2004 mariadb.org binary distribution
+
+	Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+	Oracle is a registered trademark of Oracle Corporation and/or its
+	affiliates. Other names may be trademarks of their respective
+	owners.
+
+	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+	mysql> show databases;
+	+--------------------+
+	| Database           |
+	+--------------------+
+	| information_schema |
+	| mysql              |
+	| performance_schema |
+	| sys                |
+	+--------------------+
+	4 rows in set (0.03 sec)
+
+	mysql> exit
+	Bye
+	```
 
 

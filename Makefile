@@ -13,10 +13,9 @@ build: ## build docker image
 
 .PHONY: run
 run: # run containers
-	docker network create --driver bridge ethstack; \
 	for target in target1 target2 target3 ; \
 	do \
-		docker run -d -P --rm --name $$target -h $$target --network ethstack ubu-wi-ssh ; \
+		docker run -d -P --rm --name $$target -h $$target ubu-wi-ssh ; \
 		sed -i "s/$$target/`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $$target`/2" inventory.txt ; \
 	done
 
@@ -27,8 +26,7 @@ stop: ## stop containers
 		docker stop $$target ; \
 		unset $$target ; \
 		sed -i "s/$$target ansible_host=[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/$$target ansible_host=$$target/g" inventory.txt ; \
-	done ; \
-	docker network rm ethstack
+	done ; 
 
 .PHONY: play
 play: ## run playbook
